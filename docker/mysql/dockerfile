@@ -1,0 +1,9 @@
+# 使用官方 MySQL 镜像作为基础镜像
+FROM mysql:latest
+
+# 设置字符集
+ENV LANG=C.UTF-8
+
+# 复制自定义配置文件到镜像中
+COPY my.cnf /etc/mysql/my.cnf
+
