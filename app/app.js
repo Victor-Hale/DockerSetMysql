@@ -1,6 +1,7 @@
-var http = require('http');
-var url = require('url');
-var querystring = require('querystring');
+import http from 'http';
+import url from 'url';
+import querystring from 'querystring';
+
 var server = http.createServer(
 	function (req, res) {
 		const contentType = req.headers['content-type'];
