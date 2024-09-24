@@ -53,3 +53,13 @@ docker-compose up
  node app.js
 ```
 
+### 注意事项
+
+启动包含.env的文件时，应当在根目录执行。
+例如
+
+```
+node app_2/database.js
+```
+
+这样才可以访问到env的数据
