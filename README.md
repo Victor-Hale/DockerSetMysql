@@ -63,3 +63,21 @@ node app_2/database.js
 ```
 
 这样才可以访问到env的数据
+
+将sql用于handle
+
+```
+function handleFind(req, res) {
+	const find = `select * from users`
+	db.query(find, (err, result) => {
+		if (err) {
+			res.end(JSON.stringify({ error: err.message }));
+		} else {
+			res.end(JSON.stringify({ result: result }));
+		}
+	})
+		
+}
+
+```
+

@@ -1,3 +1,5 @@
+import db from './database.js';
+
 // handleAdd 是一个post方法，处理添加用户的请求参数A+参数B,我们试图给他设置路由为/add
 function handleAdd(req, res) {
 	let body = '';
@@ -25,8 +27,21 @@ function handleSubtract(req, res) {
 		res.end(JSON.stringify({ result: result }));
 	});
 }
+// handleFind 是一个get方法，处理查找用户的请求参数,我们试图给他设置路由为/find
+function handleFind(req, res) {
+	const find = `select * from users`
+	db.query(find, (err, result) => {
+		if (err) {
+			res.end(JSON.stringify({ error: err.message }));
+		} else {
+			res.end(JSON.stringify({ result: result }));
+		}
+	})
+		
+}
 
 export default {
 	handleAdd,
 	handleSubtract,
+	handleFind
 };

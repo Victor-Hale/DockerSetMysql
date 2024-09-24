@@ -7,6 +7,9 @@ const routers = {
 	'/subtract': {
 		'POST': headlers.handleSubtract,
 	},
+	'/find': {
+		'GET': headlers.handleFind,
+	}
 }
 
 export default routers;
