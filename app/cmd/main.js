@@ -4,7 +4,7 @@ import initApp from '../bootstrap/app.js';
 
 const app = express();
 
-initApp().then(() => {
+initApp(app).then(() => {
 	app.use('/api', router);
 	
 	app.listen(3000, () => {

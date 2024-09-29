@@ -1,8 +1,9 @@
 import database from './database.js';
+import log from './log.js';
 
-async function initApp() {
+async function initApp(app) {
   await database();
-  // 其他初始化代码
+  await log(app);
 }
 
 export default initApp;
